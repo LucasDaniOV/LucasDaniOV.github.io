@@ -12,5 +12,6 @@ body {
     color: base.$font-color;
     box-sizing: border-box;
     display: grid;
+    justify-content: center;
     grid-template-columns: minmax(300px, 2000px);
 }

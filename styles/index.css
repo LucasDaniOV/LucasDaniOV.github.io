@@ -809,6 +809,7 @@ body {
   color: #333;
   box-sizing: border-box;
   display: grid;
+  justify-content: center;
   grid-template-columns: minmax(300px, 2000px);
 }
 
