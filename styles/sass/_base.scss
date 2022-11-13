@@ -1,0 +1,67 @@
+$font-stack: sans-serif;
+$font-color: #333;
+$font-size: 20px;
+
+$color1: #023059;
+
+@mixin no-margin {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin heading($size, $color, $weight) {
+    @include no-margin;
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}
+
+@mixin padding {
+    padding: 1rem;
+
+    @media only screen and (min-width: 576px) {
+        padding: 1rem 2rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+        padding: 1rem 3rem;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        padding: 1rem 6rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        padding: 2rem 10rem;
+    }
+}
+
+p {
+    @include no-margin;
+    line-height: 1.5;
+}
+
+.block {
+    display: block;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes color-change {
+    from {
+        background-color: #fff;
+        color: #000;
+        border-radius: 0;
+        border: 1px solid #000;
+    }
+    to {
+        background-color: $color1;
+        color: #fff;
+        border-radius: 1rem;
+        border: none;
+    }
+}

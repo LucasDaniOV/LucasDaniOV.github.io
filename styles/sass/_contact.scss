@@ -1,0 +1,59 @@
+@use 'base';
+
+.contact-container {
+    @include base.padding;
+}
+
+.contact {
+    .contact-header {
+        @include base.heading(2rem, #000, 800);
+        padding: 1rem 0;
+    }
+
+    .contact-text {
+        padding-top: 0;
+    }
+
+    form {
+        margin-top: 1rem;
+    }
+
+    .label {
+        @include base.heading(1.2rem, #000, 800);
+        padding: 1rem 0;
+    }
+
+    .input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    #submit {
+        margin: 1rem 0;
+        background-color: #000;
+        color: #fff;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+}
+#contact-img {
+    display: none;
+}
+
+@media only screen and (min-width: 576px) {
+    .contact-container {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, minmax(200px, 600px));
+        grid-gap: 1rem;
+    }
+    #contact-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+}

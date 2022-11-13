@@ -1,0 +1,65 @@
+@use 'base';
+
+@mixin header($h1: 1rem, $a: 0.6rem, $margin: 1rem, $flex: false) {
+    header {
+
+        @if $flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+            nav ul li:last-child {
+                margin-right: 0;
+            }
+        }
+        
+        border-bottom: 1px solid #000;
+        @include base.padding;
+        
+        a {
+            text-decoration: none;
+            h1 {
+                @include base.heading($h1, #000, 800);
+                text-transform: uppercase;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+    
+        nav {
+            ul {
+                @include base.no-margin;
+                list-style: none;
+                display: flex;
+                li {
+                    margin-right: $margin;
+                    a {
+                        @include base.heading($a, #000, 500);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include header;
+
+@media only screen and (min-width: 420px) {
+    @include header(1.5rem, 0.8rem, 1rem);
+}
+
+@media only screen and (min-width: 576px) {
+    @include header(2rem, 1rem, 1rem);
+}
+
+@media only screen and (min-width: 768px) {
+    @include header(2rem, 1rem, 1rem, true);
+}
+
+@media only screen and (min-width: 1024px) {
+    @include header(2rem, 1.2rem, 1rem, true);
+}
+
+@media only screen and (min-width: 1440px) {
+    @include header(2rem, 1.2rem, 2rem, true);
+}

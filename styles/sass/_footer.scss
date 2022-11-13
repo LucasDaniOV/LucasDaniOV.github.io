@@ -1,0 +1,10 @@
+@use 'base';
+
+footer {
+    p {
+        @include base.no-margin;
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+}

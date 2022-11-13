@@ -1,0 +1,16 @@
+@use 'base';
+@use 'header';
+@use 'footer';
+@use 'index';
+@use 'contact';
+@use 'about';
+@use 'services';
+
+body {
+    @include base.no-margin;
+    font: base.$font-size base.$font-stack;
+    color: base.$font-color;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(300px, 2000px);
+}
